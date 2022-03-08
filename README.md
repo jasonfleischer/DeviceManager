@@ -13,7 +13,7 @@ This application uses data-binding, and MMVC
 
 1. Locally run the database found [here](https://github.com/jasonfleischer/DeviceManagerDB)
 
-2. Open project in Android Studio and run on the emulator
+2. Open this project in Android Studio and run on the emulator
 
 Alternatively, you can run the application with static content on the 'no-database' branch
 
