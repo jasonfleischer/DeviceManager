@@ -18,3 +18,5 @@ https://github.com/jasonfleischer/DeviceManagerDB
 
 Alternatively, you can run the application with static content on the 'no-database' branch
 
+## Associated project:
+https://github.com/jasonfleischer/DeviceManagerDB
