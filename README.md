@@ -11,7 +11,7 @@ This application uses best practices, data-binding, and MMVC
 
 ## Starting the application:
 
-1. Use and locally run the database found here:
+1. Locally run the database found here:
 https://github.com/jasonfleischer/DeviceManagerDB
 
 2. Open project in Android Studio and run on the emulator
