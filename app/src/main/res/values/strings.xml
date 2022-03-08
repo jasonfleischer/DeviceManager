@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Device Manager</string>
+    <string name="previous">Previous</string>
+    <string name="unknown">[ not set ]</string>
+
+    <plurals name="itemCount">
+        <item quantity="zero">No items</item>
+        <item quantity="one" formatted="true">%1$d item</item>
+        <item quantity="other" formatted="true">%1$d items</item>
+    </plurals>
+
+    <string name="retry_connection">Retry Connection</string>
+    <string name="ascending_by_title">Ascending by title</string>
+    <string name="descending_by_title">Descending by title</string>
+    <string name="ascending_by_type">Ascending by type</string>
+    <string name="descending_by_type">Descending by type</string>
+
+    <string name="favourite_text">is a favourite item</string>
+    <string name="search_hint">Enter search text here</string>
+
+    <string name="content_description_search">Search</string>
+    <string name="content_description_device_image">Device</string>
+    <string name="content_description_menu">Menu</string>
+
+</resources>

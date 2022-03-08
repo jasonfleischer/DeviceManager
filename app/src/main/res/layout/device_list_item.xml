@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.devicemanager.presentation.device_list.components.DeviceListItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="@{() -> viewModel.deviceItemListener.onItemClicked(viewModel.deviceId)}">
+
+        <ImageView
+            android:id="@+id/device_image"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@mipmap/ic_placeholder"
+            app:roundedImageUrl="@{viewModel.imageRef}"
+            android:contentDescription="@string/content_description_device_image" />
+
+        <TextView
+            android:id="@+id/device_title"
+            android:text="@{viewModel.title.empty ? @string/unknown : viewModel.title }"
+            android:layout_width="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/device_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:text="@{viewModel.subTitle.empty ? @string/unknown : viewModel.subTitle }"
+            android:layout_width="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/device_title"
+            app:layout_constraintStart_toEndOf="@id/device_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Sub Title" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

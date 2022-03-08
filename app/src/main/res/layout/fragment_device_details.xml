@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.devicemanager.presentation.device_details.DeviceDetailsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.device_details.DeviceDetailsFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/content_description_device_image"
+                app:circularImageUrl="@{viewModel.state.imageUrlString}"
+                tools:src="@mipmap/ic_placeholder" />
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="@{viewModel.state.title.empty ? @string/unknown : viewModel.state.title }"
+                android:textStyle="bold"
+                tools:text="title" />
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp"
+                android:text="@{viewModel.state.subTitle}"
+                tools:text="type" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp"
+                android:drawablePadding="5dp"
+                android:text="@string/favourite_text"
+                android:textStyle="italic"
+                android:visibility="@{viewModel.state.favorite ? View.VISIBLE : View.GONE}"
+                app:drawableStartCompat="@drawable/ic_baseline_favorite_24"
+                tools:text="isFavorite: true" />
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="@{viewModel.state.price}"
+                tools:text="0 CAD" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="20dp"
+                android:text="@{viewModel.state.description}"
+                tools:text="description" />
+
+            <Button
+                android:id="@+id/button_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/previous"
+                android:onClick="@{()->viewModel.navigationProvider.returnToPreviousFragment()}"/>
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
