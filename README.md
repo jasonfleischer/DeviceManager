@@ -2,7 +2,7 @@
 
 This is a device management application for Android. This app shows a complete list of all the devices on the home page. Users can click on a device and visit the device details page. Users can search for a device from the top search bar on the home screen.
 
-This application uses best practices, data-binding, and MMVC
+This application uses data-binding, and MMVC
 
 ## Dependencies
 - HILT
